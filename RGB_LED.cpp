@@ -24,11 +24,11 @@ void RGB_LED::set_color(LED_COLOR color)
     {
         HAL_GPIO_WritePin(_port_r, _pin_r, _state_on);
     }
-    if (static_cast<uint8_t>(color) & 0b010 && _port_r != nullptr)
+    if (static_cast<uint8_t>(color) & 0b010 && _port_g != nullptr)
     {
         HAL_GPIO_WritePin(_port_g, _pin_g, _state_on);
     }
-    if (static_cast<uint8_t>(color) & 0b001 && _port_r != nullptr)
+    if (static_cast<uint8_t>(color) & 0b001 && _port_b != nullptr)
     {
         HAL_GPIO_WritePin(_port_b, _pin_b, _state_on);
     }
@@ -36,15 +36,15 @@ void RGB_LED::set_color(LED_COLOR color)
 
 void RGB_LED::off()
 {
-    if(_port_r != nullptr)
+    if (_port_r != nullptr)
     {
         HAL_GPIO_WritePin(_port_r, _pin_r, _state_off);
     }
-    if(_port_g != nullptr)
+    if (_port_g != nullptr)
     {
         HAL_GPIO_WritePin(_port_g, _pin_g, _state_off);
     }
-    if(_port_b != nullptr)
+    if (_port_b != nullptr)
     {
         HAL_GPIO_WritePin(_port_b, _pin_b, _state_off);
     }
